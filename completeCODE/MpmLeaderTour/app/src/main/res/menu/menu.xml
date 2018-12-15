@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sothree="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_radius"
+        android:orderInCategory="100"
+        sothree:showAsAction="never"
+        android:icon="@drawable/ic_radio_button_checked"
+        android:title="Radius"/>
+
+    <item
+        android:id="@+id/action_help"
+        android:orderInCategory="200"
+        android:icon="@drawable/ic_live_help"
+        sothree:showAsAction="never"
+        android:title="help"/>
+
+    <item
+        android:id="@+id/action_location"
+        android:orderInCategory="300"
+        android:icon="@drawable/ic_edit_location"
+        sothree:showAsAction="never"
+        android:title="Location Setting"/>
+
+</menu>

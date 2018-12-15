@@ -1,0 +1,12 @@
+{
+"points":[
+  { "id":"1" , "title":"point1","lat":31.305596,"lang":48.653413,"sound":"http://dl1.tilarmusic.ir/media/music/Persian-Artists/Amir%20Tataloo/Albums/Sayeh/Amir%20Tataloo%20-%20Man%20Az%20In%20Eshgh.mp3"},
+  {"id":"2" ,"title":"point2","lat":31.305714,"lang":48.653753,"sound":"http://dl1.tilarmusic.ir/media/music/Persian-Artists/Amir%20Tataloo/Albums/Sayeh/Amir%20Tataloo%20-%20Farghi%20Nadare.mp3"},
+  {"id":"3" ,"title":"point3","lat":31.305975,"lang":48.653543,"sound":"http://dl1.tilarmusic.ir/media/music/Persian-Artists/Amir%20Tataloo/Albums/Sayeh/Amir%20Tataloo%20-%20Bi%20Risheha.mp3"},
+  {"id":"4" ,"title":"point4","lat":31.305472,"lang":48.653046,"sound":"http://dl1.tilarmusic.ir/media/music/Persian-Artists/Amir%20Tataloo/Albums/Sayeh/Amir%20Tataloo%20-%20Beres.mp3"},
+  {"id":"5" ,"title":"home","lat":31.301473,"lang":48.692579,"sound":"http://dl1.tilarmusic.ir/media/music/Persian-Artists/Amir%20Tataloo/Amir%20Tataloo%20-%20Goal.mp3"}
+
+
+],
+"extera":"null"
+}

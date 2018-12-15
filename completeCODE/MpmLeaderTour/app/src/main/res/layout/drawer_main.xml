@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_gravity="right"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:clickable="true"
+
+
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/navigation_drawer_header_height"
+            android:id="@+id/lyt_header_nav"
+           >
+
+        <ImageView
+            android:layout_width="@dimen/intro_logo_size"
+            android:layout_height="@dimen/intro_logo_size"
+            android:src="@drawable/logo_tour"
+            android:background="@drawable/circle_nav"
+            android:padding="20dp"
+            android:adjustViewBounds="true"
+            android:layout_centerInParent="true" />
+            
+        </RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:gravity="center_vertical|right"
+            android:padding="10dp"
+            android:id="@+id/txt_username_nav"
+            android:layout_below="@id/lyt_header_nav"
+            android:text="نام کاربری"/>
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/lyt_recylce_nav"
+        android:background="@color/white">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/shadow"
+            android:id="@+id/img_shadow"
+            />
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img_shadow"
+            >
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recycle_nav"
+                android:padding="@dimen/main_items_recycler_padding"
+                android:background="@color/white"
+
+                />
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+    <!--<ImageView-->
+        <!--android:id="@+id/shadow"-->
+        <!--android:layout_below="@id/lyt_recylce_nav"-->
+        <!--android:fitsSystemWindows="false"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/shadow"-->
+        <!--android:scaleType="centerCrop"-->
+        <!--android:adjustViewBounds="true"-->
+         <!--/>-->
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:layout_below="@id/lyt_recylce_nav"
+        android:background="@color/lightGray"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/txt_nav_website"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:gravity="center_vertical"
+            android:text="bikport.pmo.ir"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/txt_nav_version"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:gravity="right|clip_vertical"
+            android:text="نسخه: 1.1.0"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
