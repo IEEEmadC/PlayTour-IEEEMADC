@@ -61,7 +61,8 @@ dependencies {
     implementation 'com.github.jorgecastilloprz:fabprogresscircle:1.01@aar'
     implementation project(':paper-onboarding')
     implementation 'com.karumi:dexter:5.0.0'
-}
+    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+    implementation 'com.afollestad.material-dialogs:commons:0.9.6.0'}
 
 configurations.all {
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->

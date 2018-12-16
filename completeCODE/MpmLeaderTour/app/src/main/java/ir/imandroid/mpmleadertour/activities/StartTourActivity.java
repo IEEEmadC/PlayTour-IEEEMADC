@@ -28,18 +28,23 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ToxicBakery.viewpager.transforms.ScaleInOutTransformer;
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.github.jorgecastilloprz.FABProgressCircle;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -106,7 +111,8 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
     PagerTabStrip p;
     public Typeface font_irmob_bold;
     ImageView img_auto,img_hamber;
-
+    LinearLayout lyt_shut_down,lyt_about;
+    DrawerLayout drawer_layout;
 
     private static final String TAG = "tag";
     private MyService2.PlayerBinder myPlayerService ;
@@ -210,6 +216,9 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
 
         img_auto=findViewById(R.id.img_auto);
         img_hamber=findViewById(R.id.img_hamber);
+        lyt_shut_down=findViewById(R.id.lyt_shut_down);
+        lyt_about=findViewById(R.id.lyt_about);
+        drawer_layout=findViewById(R.id.drawer_layout);
         p= findViewById(R.id.pager_header);
         seekbar_sliding=findViewById(R.id.seekbar_sliding);
         fab_play = findViewById(R.id.fab_play);
@@ -250,6 +259,40 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
         img_hamber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (!drawer_layout.isDrawerOpen(Gravity.LEFT))
+                    drawer_layout.openDrawer(Gravity.LEFT);
+            }
+        });
+
+
+        lyt_shut_down.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                new MaterialDialog.Builder(StartTourActivity.this)
+                        .title("Exit")
+                        .content("Are you sure you want to exit ? ")
+                        .positiveText("YES")
+                        .cancelable(false)
+                        .onPositive(new MaterialDialog.SingleButtonCallback() {
+                            @Override
+                            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                                drawer_layout.closeDrawer(Gravity.LEFT);
+                                buttonStop();
+                                finish();
+                                System.exit(0);
+
+                            }
+                        })
+                        .negativeText("NO")
+                        .onNegative(new MaterialDialog.SingleButtonCallback() {
+                            @Override
+                            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                                drawer_layout.closeDrawer(Gravity.LEFT);
+                            }
+                        })
+                        .show();
+
 
             }
         });
@@ -567,10 +610,35 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
         if (mLayout != null &&
                 (mLayout.getPanelState() == SlidingUpPanelLayout.PanelState.EXPANDED || mLayout.getPanelState() == SlidingUpPanelLayout.PanelState.ANCHORED)) {
             mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
-        } else {
-//            if (mediaPlayer!=null&&mediaPlayer.isPlaying()){
-//                mediaPlayer.pause();
-//            }
+        } else  if (drawer_layout.isDrawerOpen(Gravity.LEFT)){
+
+            drawer_layout.closeDrawer(Gravity.LEFT);
+
+
+        }else {
+//            new MaterialDialog.Builder(StartTourActivity.this)
+//                    .title("Exit")
+//                    .content("Are you sure you want to exit ? ")
+//                    .positiveText("YES")
+//                    .cancelable(false)
+//                    .onPositive(new MaterialDialog.SingleButtonCallback() {
+//                        @Override
+//                        public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+//                            drawer_layout.closeDrawer(Gravity.LEFT);
+//                            buttonStop();
+//                            finish();
+//                            System.exit(0);
+//
+//                        }
+//                    })
+//                    .negativeText("NO")
+//                    .onNegative(new MaterialDialog.SingleButtonCallback() {
+//                        @Override
+//                        public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+//                            drawer_layout.closeDrawer(Gravity.LEFT);
+//                        }
+//                    })
+//                    .show();
             super.onBackPressed();
         }
     }
