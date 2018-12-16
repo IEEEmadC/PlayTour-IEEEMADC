@@ -9,38 +9,38 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="#32766a"
         android:clickable="true"
 
 
         >
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/navigation_drawer_header_height"
-            android:id="@+id/lyt_header_nav"
-           >
 
-        <ImageView
-            android:layout_width="@dimen/intro_logo_size"
-            android:layout_height="@dimen/intro_logo_size"
-            android:src="@drawable/logo_tour"
-            android:background="@drawable/circle_nav"
-            android:padding="20dp"
-            android:adjustViewBounds="true"
-            android:layout_centerInParent="true" />
-            
-        </RelativeLayout>
-        <TextView
+        <RelativeLayout
+            android:id="@+id/lyt_header_nav"
             android:layout_width="match_parent"
+            android:layout_height="@dimen/navigation_drawer_header_height">
+
+            <ImageView
+                android:layout_width="@dimen/intro_logo_size"
+                android:layout_height="@dimen/intro_logo_size"
+                android:layout_centerInParent="true"
+                android:adjustViewBounds="true"
+                android:background="@drawable/circle_nav"
+                android:padding="20dp"
+                android:src="@drawable/logo_tour" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txt_username_nav"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="16sp"
+            android:layout_below="@id/lyt_header_nav"
             android:gravity="center_vertical|right"
             android:padding="10dp"
-            android:id="@+id/txt_username_nav"
-            android:layout_below="@id/lyt_header_nav"
-            android:text="نام کاربری"/>
-
+            android:text="Guest"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
 
     </RelativeLayout>
@@ -103,7 +103,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1.0"
             android:gravity="center_vertical"
-            android:text="bikport.pmo.ir"
+            android:text="PlayTour"
             android:textColor="@color/colorPrimary"
             android:textSize="14sp" />
 
@@ -113,7 +113,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1.0"
             android:gravity="right|clip_vertical"
-            android:text="نسخه: 1.1.0"
+            android:text="V: 1.1.0"
             android:textColor="@color/colorPrimary"
             android:textSize="14sp" />
 
