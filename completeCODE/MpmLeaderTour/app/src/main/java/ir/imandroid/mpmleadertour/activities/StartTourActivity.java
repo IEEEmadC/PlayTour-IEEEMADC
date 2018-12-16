@@ -105,7 +105,7 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
     ArrayList<String> nearByFiles;
     PagerTabStrip p;
     public Typeface font_irmob_bold;
-    ImageView img_auto;
+    ImageView img_auto,img_hamber;
 
 
     private static final String TAG = "tag";
@@ -209,6 +209,7 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
         setUpMap();
 
         img_auto=findViewById(R.id.img_auto);
+        img_hamber=findViewById(R.id.img_hamber);
         p= findViewById(R.id.pager_header);
         seekbar_sliding=findViewById(R.id.seekbar_sliding);
         fab_play = findViewById(R.id.fab_play);
@@ -243,6 +244,13 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
                     G.e.putBoolean(Constant.PREF_KEY_AUTO_PLAY,true).apply();
                     img_auto.setImageResource(R.drawable.auto);
                 }
+            }
+        });
+
+        img_hamber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
 
@@ -292,7 +300,7 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
     @Override
     public boolean onClusterItemClick(Pin item) {
 //        Toast.makeText(this, item.getTitle(), Toast.LENGTH_SHORT).show();
-       
+
         img_person_sliding.setImageResource(item.getPhoto());
 
         buttonStop();
