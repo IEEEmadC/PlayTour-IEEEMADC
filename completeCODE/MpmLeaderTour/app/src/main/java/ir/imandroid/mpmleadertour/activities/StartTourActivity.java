@@ -601,6 +601,9 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
         setUpMap();
         set_img_auto();
         updateState();
+        if (drawer_layout.isDrawerOpen(Gravity.LEFT)){
+            drawer_layout.closeDrawer(Gravity.LEFT);
+        }
 //        mHandler.removeCallbacks(mRunnable);
 //        updateSeekProgress();
 
