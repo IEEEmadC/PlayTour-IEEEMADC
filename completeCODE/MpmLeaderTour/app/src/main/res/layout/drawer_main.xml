@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#32766a"
+        android:background="#33776b"
         android:clickable="true"
 
 
@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/lyt_header_nav"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
             android:gravity="center_vertical|right"
             android:padding="10dp"
             android:text="Guest"
@@ -48,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/lyt_header_nav"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentLeft="true"
             android:gravity="center_vertical|right"
             android:padding="10dp"
             android:text="Login"
@@ -79,7 +79,9 @@
                 <LinearLayout
                     android:id="@+id/lyt_about"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
                     android:orientation="horizontal">
 
 
@@ -87,7 +89,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="3dp"
-                        android:src="@drawable/ic_info_outline_light_green_700_36dp" />
+                        android:src="@drawable/ic_info_green_800_36dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -102,9 +104,11 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/lyt_shut_down"
+                    android:id="@+id/lyt_about"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
                     android:orientation="horizontal">
 
 
@@ -112,7 +116,34 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="3dp"
-                        android:src="@drawable/ic_info_outline_light_green_700_36dp" />
+                        android:src="@drawable/ic_settings_green_800_36dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:gravity="left|center_vertical"
+                        android:text="Setting"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyt_shut_down"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_exit_to_app_green_800_36dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
