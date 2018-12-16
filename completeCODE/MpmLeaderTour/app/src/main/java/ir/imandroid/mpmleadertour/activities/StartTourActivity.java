@@ -234,7 +234,7 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
 
 
         p.setTextSize(1,16);
-        p.setTabIndicatorColor(Color.WHITE);
+        p.setTabIndicatorColor(getResources().getColor(R.color.colorAccent));
         p.setTextColor(Color.WHITE);
 
         for (int i = 0; i < p.getChildCount(); ++i) {
