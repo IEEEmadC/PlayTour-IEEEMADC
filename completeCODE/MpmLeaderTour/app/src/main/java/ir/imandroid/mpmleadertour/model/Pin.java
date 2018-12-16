@@ -30,6 +30,7 @@ public class Pin implements ClusterItem {
     private String sound;
     private double distnace;
     private String id;
+    LeaderTour leaderTour;
 
     Pin(){}
 
@@ -91,5 +92,29 @@ public class Pin implements ClusterItem {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
+    public void setPhoto(int photo) {
+        this.photo = photo;
+    }
+
+    public void setLatLng(LatLng latLng) {
+        this.latLng = latLng;
+    }
+
+    public LeaderTour getLeaderTour() {
+        return leaderTour;
+    }
+
+    public void setLeaderTour(LeaderTour leaderTour) {
+        this.leaderTour = leaderTour;
     }
 }

@@ -90,6 +90,7 @@ import retrofit2.http.PUT;
 
 import static ir.imandroid.mpmleadertour.util.Constant.PAUSE;
 import static ir.imandroid.mpmleadertour.util.Constant.PLAY;
+import static ir.imandroid.mpmleadertour.util.Constant.PREF_KEY_PIN_SELECTED;
 import static ir.imandroid.mpmleadertour.util.Constant.PREF_KEY_STATE;
 import static ir.imandroid.mpmleadertour.util.Constant.STATE;
 import static ir.imandroid.mpmleadertour.util.Constant.STOP;
@@ -859,8 +860,9 @@ private void addItem(String id , LatLng latLng, String title, String info, int i
 
             fab_play.setImageResource(android.R.drawable.ic_media_pause);
 
-            if (G.getPrefs.getInt(POSITION, -1)!=-1 && locsNearByList.size()>0) {
-                txt_person_sliding.setText(locsNearByList.get(G.getPrefs.getInt(POSITION, -1)).getTitle());
+            if (locsNearByList.size()>0) {
+                txt_person_sliding.setText(new Gson().fromJson(G.getPrefs.getString(PREF_KEY_PIN_SELECTED,""),Pin.class).getTitle());
+
             }
         }else if (state.equals(PAUSE)){
             Log.i("UpdateStateMethod", "onReceive: Pause " );
@@ -869,7 +871,7 @@ private void addItem(String id , LatLng latLng, String title, String info, int i
         }else if(state.equals(STOP)) {
             Log.i("UpdateStateMethod", "onReceive: Stop " );
             fab_play.setImageResource(android.R.drawable.ic_media_play);
-            txt_person_sliding = (TextView) findViewById(R.id.txt_person_sliding);
+            txt_person_sliding = findViewById(R.id.txt_person_sliding);
             txt_person_sliding.setText("");
         }
         else {
