@@ -123,35 +123,10 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
     private TextView txt_person_sliding;
     private ViewGroup infoWindow;
 
-    private OnInfoWindowElemTouchListener infoButtonListener;
-
     private ClusterManager<Pin> mClusterManager;
     private Random mRandom = new Random(1984);
     private GoogleMap mMap;
-    Intent intent= new Intent(this, MyService2.class);
 
-//    private Handler mHandler = new Handler();
-//    private Runnable mRunnable = new Runnable() {
-//        @Override
-//        public void run() {
-//            updateSeekProgress();
-//        }
-//    };
-//    private void updateSeekProgress() {
-//        Log.i(TAG, "updateSeekProgress: MplayerService " + (myPlayerService==null));
-//        if (myPlayerService !=null && myPlayerService.getMediaPlayer() != null) {
-////            if (myPlayerService.getMediaPlayer().isPlaying()) {
-//                seekbar_sliding.setProgress((int) (((float) myPlayerService.getMediaPlayer().getCurrentPosition() / myPlayerService.getLentghAudio()) * 100));
-////                sendSeekBarPercentage((int) (((float) mediaPlayer.getCurrentPosition() / lengthOfAudio) * 100));
-//
-//            Log.i(TAG, "updateSeekProgress: " + (int) (((float) myPlayerService.getMediaPlayer().getCurrentPosition() / myPlayerService.getLentghAudio()) * 100));
-//
-//
-//                mHandler.postDelayed(mRunnable
-//                , 1000);
-////            }
-//        }
-//    }
 
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -316,28 +291,16 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
 
     @Override
     public boolean onClusterItemClick(Pin item) {
-        // Does nothing, but you could go into the user's profile page, for example.
-        Toast.makeText(this, item.getTitle(), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, item.getTitle(), Toast.LENGTH_SHORT).show();
+       
         img_person_sliding.setImageResource(item.getPhoto());
-                buttonStop();
-//            seekbar_sliding.setProgress(0);
-//            img_play_sliding.setImageResource(R.drawable.ic_play_arrow_white_36dp);
-            fab_play.setImageResource(R.drawable.ic_play_arrow_white_36dp);
 
-            G.e.putString(Constant.PREF_KEY_PIN_SELECTED,new Gson().toJson(item)).apply();
+        buttonStop();
 
-//        if (item.getTitle().equals(getString(R.string.LOC1))) {
-//
-//            mediaPlayer = MediaPlayer.create(this, R.raw.loc1);
-//
-//        } else if (item.getTitle().equals(getString(R.string.LOC2))) {
-//
-//            mediaPlayer = MediaPlayer.create(this, R.raw.loc2);
-//
-//        } else if (item.getTitle().equals(getString(R.string.LOC3))) {
-//            mediaPlayer = MediaPlayer.create(this, R.raw.loc3);
-//
-//        }
+        fab_play.setImageResource(R.drawable.ic_play_arrow_white_36dp);
+
+        G.e.putString(Constant.PREF_KEY_PIN_SELECTED,new Gson().toJson(item)).apply();
+
 
 
         return false;
@@ -497,19 +460,7 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
 
             @Override
             public View getInfoContents(Marker marker) {
-                // Setting up the infoWindow with current's marker info
-//                infoTitle.setText(marker.getTitle());
-//                infoSnippet.setText(marker.getSnippet());
-//                pickAudioListener.setMarker(marker);
 
-//
-//
-
-
-                // We must call this to set the current marker and infoWindow references
-                // to the MapWrapperLayout
-
-//                return infoWindow;
                 return null;
             }
         });
@@ -551,7 +502,7 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
             Log.i("TAG", "Exception-->"+e.getMessage().toString());
 
         }
-//        addItem();
+
         mClusterManager.cluster();
 
     }
@@ -571,11 +522,6 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
     public void onDestroy() {
         super.onDestroy();
         unregisterReceiver(receiver);
-//        unbindService(playerServiceConnection);
-//        mHandler.removeCallbacks(mRunnable);
-//        if(!myPlayerService.getMediaPlayer().isPlaying()) {
-//            stopService(intent);
-//        }
 
     }
 
@@ -1008,7 +954,7 @@ private void addItem(String id , LatLng latLng, String title, String info, int i
             {
                 case 0:
 
-                    title= "اInfo";
+                    title= "Info";
                     break;
                 case 1:
                     title= "Nearby";
