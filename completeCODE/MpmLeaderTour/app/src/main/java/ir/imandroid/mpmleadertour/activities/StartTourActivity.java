@@ -890,7 +890,7 @@ private void addItem(String id , LatLng latLng, String title, String info, int i
     protected void onStart() {
         super.onStart();
 
-        Toast.makeText(this, "!", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "!", Toast.LENGTH_SHORT).show();
         // Have to start using startService so service isn't killed when this activity unbinds from
         // it onStop
         Intent intent= new Intent(this, MyService2.class);

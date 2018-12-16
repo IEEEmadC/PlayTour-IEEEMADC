@@ -488,15 +488,17 @@ public class MyService2 extends Service {
         @Override
         protected Boolean doInBackground(String... params) {
 
-            Boolean prepared;
+            Boolean prepared = null;
 
             try {
-                mediaPlayer.reset();
-                mediaPlayer.setDataSource(params[0]);
-                mediaPlayer.prepare();
-                lengthOfAudio = mediaPlayer.getDuration();
+                if (mediaPlayer!=null){
+                    mediaPlayer.reset();
+                    mediaPlayer.setDataSource(params[0]);
+                    mediaPlayer.prepare();
+                    lengthOfAudio = mediaPlayer.getDuration();
 
-                prepared = true;
+                    prepared = true;
+                }
 
             } catch (IllegalArgumentException e) {
                 // TODO Auto-generated catch block

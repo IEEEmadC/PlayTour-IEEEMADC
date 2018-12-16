@@ -116,15 +116,24 @@
                         android:layout_gravity="center"
                         android:src="@drawable/none"/>
 
+                    <com.github.jorgecastilloprz.FABProgressCircle
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:arcColor="#00ffff"
+                        app:rippleColor="@color/fab_orange_dark"
+                        app:arcWidth="7dp"
+                        >
+                        <ImageView
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:src="@drawable/ic_stop_white_36dp"
+                            android:id="@+id/img_stop_sliding"
+                            android:tag="none"
+                            android:padding="2dp"
+                            android:layout_gravity="center"/>
+                    </com.github.jorgecastilloprz.FABProgressCircle>
 
-                    <ImageView
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:src="@drawable/ic_stop_white_36dp"
-                        android:id="@+id/img_stop_sliding"
-                        android:tag="none"
-                        android:padding="2dp"
-                        android:layout_gravity="center"/>
+
 
                     <com.github.jorgecastilloprz.FABProgressCircle
                         android:id="@+id/fabProgressCircle"
