@@ -120,7 +120,7 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
     private FloatingActionButton fab_play;
     private ImageView img_stop_sliding;
     private ImageView img_person_sliding;
-    private TextView txt_person_sliding;
+    private TextView txt_person_sliding,txt_username_nav,txt_register;
     private ViewGroup infoWindow;
 
     private ClusterManager<Pin> mClusterManager;
@@ -405,6 +405,8 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
         fabProgressCircle =  findViewById(R.id.fabProgressCircle);
         img_stop_sliding =  findViewById(R.id.img_stop_sliding);
         txt_person_sliding =  findViewById(R.id.txt_person_sliding);
+        txt_register =  findViewById(R.id.txt_register);
+        txt_username_nav =  findViewById(R.id.txt_username_nav);
 
 
 

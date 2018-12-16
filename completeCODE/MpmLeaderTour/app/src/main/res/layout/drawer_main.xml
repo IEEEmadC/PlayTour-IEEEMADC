@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:layout_gravity="right"
+    android:layout_gravity="left"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -36,11 +36,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/lyt_header_nav"
+            android:layout_alignParentLeft="true"
             android:gravity="center_vertical|right"
             android:padding="10dp"
             android:text="Guest"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lyt_header_nav"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical|right"
+            android:padding="10dp"
+            android:text="Login"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>
@@ -51,26 +66,32 @@
         android:layout_weight="1"
         android:id="@+id/lyt_recylce_nav"
         android:background="@color/white">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/shadow"
-            android:id="@+id/img_shadow"
-            />
+
         <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/img_shadow"
             >
 
-            <android.support.v7.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/recycle_nav"
-                android:padding="@dimen/main_items_recycler_padding"
-                android:background="@color/white"
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              >
 
-                />
+
+              <ImageView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:src="@drawable/ic_done" />
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:layout_weight="1"
+                  android:gravity="left|center_vertical"
+                  android:text="1111111" />
+
+          </LinearLayout>
 
         </android.support.v4.widget.NestedScrollView>
 
