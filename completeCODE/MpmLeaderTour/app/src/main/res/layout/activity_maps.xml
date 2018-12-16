@@ -163,8 +163,9 @@
                             android:id="@+id/txt_person_sliding"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Teacher"
-                            android:textColor="#000000" />
+                            android:padding="5dp"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
 
                         <SeekBar
                             android:layout_width="match_parent"
