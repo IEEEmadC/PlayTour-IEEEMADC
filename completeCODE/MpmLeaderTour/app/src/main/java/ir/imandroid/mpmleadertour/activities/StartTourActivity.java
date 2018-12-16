@@ -125,7 +125,7 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
 //    private ImageView img_play_sliding;
     private FABProgressCircle fabProgressCircle;
     private FloatingActionButton fab_play;
-    private ImageView img_stop_sliding;
+    private FloatingActionButton img_stop_sliding;
     private ImageView img_person_sliding;
     private TextView txt_person_sliding,txt_username_nav,txt_register;
     private ViewGroup infoWindow;
@@ -329,7 +329,7 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
 
         // Animate camera to the bounds
         try {
-            getMap().animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 85));
+            getMap().animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 45));
         } catch (Exception e) {
             e.printStackTrace();
         }
