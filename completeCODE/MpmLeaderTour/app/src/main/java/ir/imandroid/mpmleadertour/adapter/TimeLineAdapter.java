@@ -68,7 +68,7 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         final Pin pin = mValues.get(position);
         holder.text_timeline_title.setText(pin.getTitle());
-        holder.txt_distance.setText((int)pin.getDistnace()+ " متر ");
+        holder.txt_distance.setText((int)pin.getDistnace()+ " Meter ");
 
         if (mValues.get(position).getDistnace()<1000){
 
