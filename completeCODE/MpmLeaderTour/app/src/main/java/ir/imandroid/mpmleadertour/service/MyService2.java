@@ -491,14 +491,17 @@ public class MyService2 extends Service {
             Boolean prepared = null;
 
             try {
-                if (mediaPlayer!=null){
+                if (mediaPlayer!=null)
                     mediaPlayer.reset();
+                if (mediaPlayer!=null)
                     mediaPlayer.setDataSource(params[0]);
+                if (mediaPlayer!=null)
                     mediaPlayer.prepare();
+                if (mediaPlayer!=null)
                     lengthOfAudio = mediaPlayer.getDuration();
 
                     prepared = true;
-                }
+
 
             } catch (IllegalArgumentException e) {
                 // TODO Auto-generated catch block
