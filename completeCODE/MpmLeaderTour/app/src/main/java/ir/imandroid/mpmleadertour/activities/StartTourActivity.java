@@ -213,6 +213,8 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+        G.e.putString(Constant.PREF_KEY_STATE, "0").apply();
+        G.e.putString(Constant.PREF_KEY_PIN_SELECTED, "").apply();
         setUpMap();
 
         img_auto=findViewById(R.id.img_auto);
@@ -854,22 +856,19 @@ private void addItem(String id , LatLng latLng, String title, String info, int i
 
 
     void updateState(){
+
         Log.i("UpdateStateMethod", "updateState in StartTourActivity.... ="+G.getPrefs.getString(STATE,"-1"));
+
         String state = G.getPrefs.getString(PREF_KEY_STATE,"-1");
 
         if (state.equals(PLAY)){
             Log.i("UpdateStateMethod", "onReceive: Playing " );
-
             fab_play.setImageResource(android.R.drawable.ic_media_pause);
-
             if (locsNearByList.size()>0) {
                 if (G.getPrefs.getString(Constant.PREF_KEY_PIN_SELECTED , "").length()>0){
 
                     txt_person_sliding.setText(new Gson().fromJson(G.getPrefs.getString(PREF_KEY_PIN_SELECTED,""),Pin.class).getTitle());
-
                 }
-
-
             }
         }else if (state.equals(PAUSE)){
             Log.i("UpdateStateMethod", "onReceive: Pause " );

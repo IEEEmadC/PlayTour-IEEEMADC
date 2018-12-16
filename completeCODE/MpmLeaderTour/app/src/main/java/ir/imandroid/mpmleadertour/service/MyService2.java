@@ -106,6 +106,7 @@ public class MyService2 extends Service {
         mediaPlayer = new MediaPlayer();
         initMusicPlayer();
         Log.i(TAG, "onCreate: PREF_KEY_STATE set to 0 ! ");
+        G.e.putString(Constant.PREF_KEY_PIN_SELECTED, "").apply();
         G.e.putString(Constant.PREF_KEY_STATE, "0").apply();
         LOCATION_DISTANCE = G.getPrefs.getFloat(Constant.PREF_KEY_MIN_DIST, 5);
         LOCATION_INTERVAL = G.getPrefs.getInt(Constant.PREF_KEY_MIN_TIME, 5000);
@@ -539,7 +540,7 @@ public class MyService2 extends Service {
             if (mediaPlayer != null) {
                 mediaPlayer.start();
                 // Send callback to UI
-                G.e.putString(Constant.PREF_KEY_STATE, PLAY).apply();
+//                G.e.putString(Constant.PREF_KEY_STATE, PLAY).apply();
 
                 handler = new Handler();
                 handler.postDelayed(new Runnable() {
