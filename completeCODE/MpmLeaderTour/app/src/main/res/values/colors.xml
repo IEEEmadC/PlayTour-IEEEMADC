@@ -2,8 +2,8 @@
 <resources>
 
     <color name="colorAccent">#f2b408</color>
-    <color name="colorPrimary">#131064</color>
-    <color name="colorPrimaryDark">#15134e</color>
+    <color name="colorPrimary">#0F796A</color>
+    <color name="colorPrimaryDark">#0a594e</color>
     <color name="colorPrimaryTransparent">#f10b0b23</color>
     <color name="secondaryPrimary">#18183d</color>
     <color name="overflow">#efeff1</color>
