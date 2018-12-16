@@ -1,13 +1,9 @@
 <resources>
-    <string name="app_name">MpmLeaderTour</string>
-    <string name="title_activity_maps">LeaderTour</string>
+    <string name="app_name">PlayTour</string>
     <string name="action_hide">hide</string>
     <string name="action_anchor_enable">anchor_enable</string>
     <string name="action_show">show</string>
     <string name="action_anchor_disable">anchor_disable</string>
-    <string name="LOC1">خیابان احداثی</string>
-    <string name="LOC2">محتمع آرمیس</string>
-    <string name="LOC3">پاتوق سوم</string>
     <string name="irmob">fonts/irmob.ttf</string>
     <string name="irmob_bold">fonts/irmob_bold.ttf</string>
 
