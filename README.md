@@ -1,6 +1,9 @@
 # PlayTour-IEEEMADC
 Play Tour - this application created for IEEEMADC Competition 
 
+![alt text](https://github.com/imansdn/PlayTour-IEEEMADC/blob/master/Logo/PlayTour-Feature%20Graphic.jpg)
+
+
 some people likes to share their experiences and informations whit other . for example when you go to another country for first time,  You would love the people of that country, give you some information about new places.
 When we go to a new place we need to know about people ,culture, different scenery ,something specific or specific activities , new challenge and etc.. it’s more pleasure for us if we know these with another person who lives there or visited before us!
 Imagine yourself to get on the bus and open PlayTour applications and when you are nearing to some points suddenly hear a voice from a cool guy who speaking about your place!
