@@ -62,4 +62,8 @@
         <item name="android:background">#00ffffff</item>
     </style>
 
+    <style name="LywCompatTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColorPrimary">@android:color/tertiary_text_dark</item>
+    </style>
+
 </resources>

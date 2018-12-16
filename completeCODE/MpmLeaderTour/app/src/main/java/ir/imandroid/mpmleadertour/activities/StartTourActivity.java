@@ -96,7 +96,7 @@ import static ir.imandroid.mpmleadertour.util.Constant.STATE;
 import static ir.imandroid.mpmleadertour.util.Constant.STOP;
 
 
-public class StartTourActivity extends AppCompatActivity implements OnMapReadyCallback,ClusterManager.OnClusterClickListener<Pin>,
+public class StartTourActivity extends BaseAppCompatActivity implements OnMapReadyCallback,ClusterManager.OnClusterClickListener<Pin>,
         ClusterManager.OnClusterInfoWindowClickListener<Pin>,
         ClusterManager.OnClusterItemClickListener<Pin>,
         ClusterManager.OnClusterItemInfoWindowClickListener<Pin>,
