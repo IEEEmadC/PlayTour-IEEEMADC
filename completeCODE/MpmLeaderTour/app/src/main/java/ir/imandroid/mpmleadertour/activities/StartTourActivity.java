@@ -460,7 +460,7 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
             public void onClick(View v) {
                 Log.i(TAG, "onClick: Play Clicked");
 
-
+                if (G.getPrefs.getString(Constant.PREF_KEY_PIN_SELECTED , "").length()>0) {
                     if (!getState().equals(PLAY)){
                         Log.i(TAG, "onClick: Play Clicked");
                         buttonPlay();
@@ -470,6 +470,8 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
                         fab_play.setImageResource(android.R.drawable.ic_media_play);
 
                     }
+                }
+
 
             }
         });
@@ -861,7 +863,12 @@ private void addItem(String id , LatLng latLng, String title, String info, int i
             fab_play.setImageResource(android.R.drawable.ic_media_pause);
 
             if (locsNearByList.size()>0) {
-                txt_person_sliding.setText(new Gson().fromJson(G.getPrefs.getString(PREF_KEY_PIN_SELECTED,""),Pin.class).getTitle());
+                if (G.getPrefs.getString(Constant.PREF_KEY_PIN_SELECTED , "").length()>0){
+
+                    txt_person_sliding.setText(new Gson().fromJson(G.getPrefs.getString(PREF_KEY_PIN_SELECTED,""),Pin.class).getTitle());
+
+                }
+
 
             }
         }else if (state.equals(PAUSE)){
@@ -960,9 +967,10 @@ private void addItem(String id , LatLng latLng, String title, String info, int i
     }
     public void buttonPlay() {
 
-        myPlayerService.play();
-        set_img_auto();
-
+        if (G.getPrefs.getString(Constant.PREF_KEY_PIN_SELECTED , "").length()>0) {
+            myPlayerService.play();
+            set_img_auto();
+        }
 
     }
     public void buttonPause() {
@@ -976,6 +984,8 @@ private void addItem(String id , LatLng latLng, String title, String info, int i
 //
 //    }
     public void buttonStop() {
+        G.e.putString(Constant.PREF_KEY_PIN_SELECTED, "").apply();
+        G.e.putString(Constant.PREF_KEY_STATE, STOP).apply();
         myPlayerService.stop();
         fab_play.setImageResource(android.R.drawable.ic_media_play);
         set_img_auto();

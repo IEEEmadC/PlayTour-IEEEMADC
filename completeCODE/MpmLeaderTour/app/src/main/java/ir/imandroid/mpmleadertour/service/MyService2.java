@@ -382,7 +382,9 @@ public class MyService2 extends Service {
                 Log.i("MyService222", "play: ");
                 mediaPlayer = new MediaPlayer();
                 setForeground();
-                pin = new Gson().fromJson(G.getPrefs.getString(Constant.PREF_KEY_PIN_SELECTED, ""), Pin.class);
+                if (G.getPrefs.getString(Constant.PREF_KEY_PIN_SELECTED , "").length()>0) {
+                    pin = new Gson().fromJson(G.getPrefs.getString(Constant.PREF_KEY_PIN_SELECTED, ""), Pin.class);
+                }
                 if (pin != null) {
                     if (player != null) {
                         player.cancel(true);
@@ -402,8 +404,9 @@ public class MyService2 extends Service {
             mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
                 public void onCompletion(MediaPlayer mediaPlayer) {
-
-                    Pin pin = new Gson().fromJson(G.getPrefs.getString(PREF_KEY_PIN_SELECTED, ""), Pin.class);
+                    if (G.getPrefs.getString(Constant.PREF_KEY_PIN_SELECTED , "").length()>0) {
+                        Pin pin = new Gson().fromJson(G.getPrefs.getString(PREF_KEY_PIN_SELECTED, ""), Pin.class);
+                    }
                     stop();
                     for (int i = 0; i < nearbyPins.size(); i++) {
                         if (pin.getId().equals(nearbyPins.get(i).getId())) {
@@ -444,12 +447,15 @@ public class MyService2 extends Service {
             if (mediaPlayer != null) {
                 // Stop and get rid of the playerMediaPlayer
 
-                handler.removeCallbacksAndMessages(null);
+                if (handler!=null){
+                    handler.removeCallbacksAndMessages(null);
+                }
                 sendSeekBarPercentage(0);
                 mediaPlayer.stop();
                 mediaPlayer.reset();
                 mediaPlayer.release();
                 mediaPlayer = null;
+                G.e.putString(Constant.PREF_KEY_PIN_SELECTED, "").apply();
                 setBackground();
             }
 

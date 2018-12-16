@@ -90,11 +90,17 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
                 onItemClicked.onClick();
             }
         });
-        Pin selectedPin = new Gson().fromJson(G.getPrefs.getString(Constant.PREF_KEY_PIN_SELECTED , "") , Pin.class);
-        if (mValues.get(position).getId().equals(selectedPin.getId())) {
+        if (G.getPrefs.getString(Constant.PREF_KEY_PIN_SELECTED , "").length()>0){
 
-            holder.cardView.setCardBackgroundColor(Color.parseColor("#2dc100"));
+            Pin selectedPin = new Gson().fromJson(G.getPrefs.getString(Constant.PREF_KEY_PIN_SELECTED , "") , Pin.class);
+
+            if (mValues.get(position).getId().equals(selectedPin.getId())) {
+
+                holder.cardView.setCardBackgroundColor(Color.parseColor("#2dc100"));
+            }
+
         }
+
     }
 
 
