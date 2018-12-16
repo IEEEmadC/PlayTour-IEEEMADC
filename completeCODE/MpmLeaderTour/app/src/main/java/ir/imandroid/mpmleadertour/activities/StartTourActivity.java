@@ -222,6 +222,7 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
         lyt_shut_down=findViewById(R.id.lyt_shut_down);
         lyt_about=findViewById(R.id.lyt_about);
         drawer_layout=findViewById(R.id.drawer_layout);
+        txt_register =  findViewById(R.id.txt_register);
         p= findViewById(R.id.pager_header);
         seekbar_sliding=findViewById(R.id.seekbar_sliding);
         fab_play = findViewById(R.id.fab_play);
@@ -297,6 +298,13 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
                         .show();
 
 
+            }
+        });
+
+        txt_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(StartTourActivity.this,LoginActivity.class));
             }
         });
 
@@ -451,7 +459,6 @@ public class StartTourActivity extends AppCompatActivity implements OnMapReadyCa
         fabProgressCircle =  findViewById(R.id.fabProgressCircle);
         img_stop_sliding =  findViewById(R.id.img_stop_sliding);
         txt_person_sliding =  findViewById(R.id.txt_person_sliding);
-        txt_register =  findViewById(R.id.txt_register);
         txt_username_nav =  findViewById(R.id.txt_username_nav);
 
 

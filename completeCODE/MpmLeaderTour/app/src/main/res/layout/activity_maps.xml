@@ -44,7 +44,7 @@
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:font="@string/irmob_bold" />
+                 />
 
             <ImageView
                 android:id="@+id/img_auto"
