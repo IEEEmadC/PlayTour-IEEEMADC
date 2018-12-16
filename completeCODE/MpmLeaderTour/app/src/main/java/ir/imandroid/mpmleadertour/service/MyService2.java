@@ -347,6 +347,7 @@ public class MyService2 extends Service {
 
         public void mediaSeekTo(int value) {
 
+            if (mediaPlayer!=null)
             mediaPlayer.seekTo((lengthOfAudio / 100) * value);
 
         }
